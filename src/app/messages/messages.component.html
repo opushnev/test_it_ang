@@ -1,2 +1,17 @@
-<H1>123456789</H1>
-<p>messages</p>
+<div class="messages_block">
+    <div class="messages_search">
+        <input type="text" (change)="setSearch($event)" name="search" placeholder="Введите строку для поиска">
+        <button (click)="MessagesSearch()">ПОИСК</button>
+    </div>
+    <div class="messages_all">
+        <ul>
+            <li *ngFor="let p of Msg">
+                {{p.body}}
+            </li>
+        </ul>
+    </div>
+    <div class="messages_send">
+        <input type="text" (change)="setSend($event)" name="message" placeholder="Введите текст для отправки" value={{msgout}}>
+        <button (click)="MessagesSend()">ОТПРАВИТЬ</button>
+    </div>
+</div>
